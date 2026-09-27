@@ -457,7 +457,7 @@
     </div>
 
     <script>
-        const lang = localStorage.getItem('lang') || 'en';
+        const lang = localStorage.getItem('lang') || 'es';
 
         function setLang(newLang) {
             localStorage.setItem('lang', newLang);
@@ -469,7 +469,7 @@
         }
 
         function toggleLang() {
-            const current = localStorage.getItem('lang') || 'en';
+            const current = localStorage.getItem('lang') || 'es';
             setLang(current === 'en' ? 'es' : 'en');
         }
 
