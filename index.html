@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan David</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .lang-toggle:hover {
+            background: #e0e0e0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 12px;
+        }
+
+        .update-notice {
+            background: #f0f0f0;
+            padding: 15px 20px;
+            border-left: 4px solid #333;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .intro-section {
+            margin-bottom: 30px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .intro-section p {
+            margin-bottom: 15px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-intro {
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .item {
+            margin-bottom: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .item-emoji {
+            font-size: 1.3rem;
+            min-width: 30px;
+            flex-shrink: 0;
+        }
+
+        .item-content p {
+            margin: 0;
+        }
+
+        .item-content strong {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .somos-box {
+            background: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .somos-box h3 {
+            font-size: 1.1rem;
+            color: #0066cc;
+            margin-bottom: 12px;
+        }
+
+        .somos-box p {
+            margin-bottom: 12px;
+        }
+
+        .stat {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: #f0f0f0;
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .skill strong {
+            display: block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .skill p {
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .subsection-title {
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .footer a {
+            color: #666;
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-link {
+            color: #0066cc;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        [data-page] {
+            display: none;
+        }
+
+        [data-page].active {
+            display: block;
+        }
+
+        p {
+            margin-bottom: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .highlight {
+            color: #0066cc;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .lang-toggle {
+                position: static;
+                margin-bottom: 20px;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="lang-toggle" onclick="toggleLang()">ES / EN</button>
+
+    <div class="container">
+        <!-- HOME PAGE -->
+        <div data-page="home" class="active">
+            <h1 data-en="Now" data-es="Ahora">Now</h1>
+
+            <div class="update-notice">
+                <span data-en="🕰️ Last updated: September 26, 2026." data-es="🕰️ Última actualización: 26 de septiembre, 2026."></span>
+            </div>
+
+            <div class="intro-section">
+                <p data-en="Building scalable impact initiatives across Latin America for years. My most significant experience was founding and leading Fundación ETH Kipu, where we built educational programs in Solidity that touched 2,500+ people across 12 countries." data-es="He pasado los últimos años construyendo y escalando iniciativas de impacto en Latinoamérica. Mi experiencia más significativa fue fundar y dirigir Fundación ETH Kipu, donde lideramos programas de educación tecnológica que tocaron más de 2,500 personas en 12 países.">Building scalable impact initiatives across Latin America for years...</p>
+            </div>
+
+            <div class="section">
+                <h2 data-en="Now" data-es="Ahora">Now</h2>
+
+                <div class="item">
+                    <div class="item-emoji">✍🏼</div>
+                    <div class="item-content">
+                        <p><strong data-en="Writer" data-es="Escritor">Writer</strong>, <span data-en="dedicating time to family histories. Launching a new project soon." data-es="me dedico a hacer historias familiares. Pronto anunciaré ese proyecto.">dedicating time to family histories. Launching a new project soon.</span></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-emoji">🤝</div>
+                    <div class="item-content">
+                        <p><strong data-en="Community builder" data-es="Gestor de comunidades">Community builder</strong>, <span data-en="created conectenis.com to find more tennis matches in new cities." data-es="creé conectenis.com para poder jugar más partidos de tenis al llegar a una nueva ciudad.">created conectenis.com to find more tennis matches in new cities.</span></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-emoji">🫙</div>
+                    <div class="item-content">
+                        <p><strong data-en="Fermentor" data-es="Fermentero">Fermentor</strong>, <span data-en="we gather every two weeks at El Escampadero to ferment." data-es="con un parche nos reunimos cada 15 días a hacer fermentos en El Escampadero.">we gather every two weeks at El Escampadero to ferment.</span></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-emoji">🚵🏻</div>
+                    <div class="item-content">
+                        <p><strong data-en="Cyclist" data-es="Ciclista">Cyclist</strong>, <span data-en="raced my first century and did bikepacking in Antioquia." data-es="corrí mi primer fondo en la Ruta Medellín y he hecho bikepacking en Antioquia.">raced my first century and did bikepacking in Antioquia.</span></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-emoji">🎾</div>
+                    <div class="item-content">
+                        <p><strong data-en="Tennis player" data-es="Tenista">Tennis player</strong>, <span data-en="play at least once a week." data-es="juego por lo menos una vez a la semana.">play at least once a week.</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 data-en="Past" data-es="Pasado reciente">Past</h2>
+
+                <div class="item">
+                    <div class="item-emoji">🧵</div>
+                    <div class="item-content">
+                        <p><strong data-en="Builder" data-es="Tejedor">Builder</strong>, <span data-en="worked with ETH Kipu connecting people through Web3 education." data-es="trabajé con ETH Kipu conectando gente a través de Educación Web3.">worked with ETH Kipu connecting people through Web3 education.</span></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-emoji">👨‍🏫</div>
+                    <div class="item-content">
+                        <p><strong data-en="Teacher" data-es="Profesor">Teacher</strong>, <span data-en="facilitated Solidity programming courses at Ethereum Developer Pack." data-es="facilité cursos de programación en Solidity: Ethereum Developer Pack.">facilitated Solidity programming courses at Ethereum Developer Pack.</span></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-emoji">👾</div>
+                    <div class="item-content">
+                        <p><strong data-en="Organizer" data-es="Organizador">Organizer</strong> <span data-en="of Devcon in Bogotá and Web3 hackathons." data-es="de Devcon en Bogotá y hackatones Web3.">of Devcon in Bogotá and Web3 hackathons.</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 data-en="Connect" data-es="Conectar">Connect</h2>
+                <div class="item">
+                    <div class="item-content">
+                        <p data-en="Active on Instagram @juandavid.xyz and Telegram." data-es="Estoy activo en Instagram @juandavid.xyz y Telegram.">Active on Instagram @juandavid.xyz and Telegram.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-emoji">📝</div>
+                    <div class="item-content">
+                        <p><a href="https://blog.juandavid.xyz" target="_blank" data-en="Blog" data-es="Blog">Blog</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p data-en="This is my /now page, inspired by Derek Sivers." data-es="Esta es mi página /now como propone Derek Sivers.">This is my /now page, inspired by Derek Sivers.</p>
+            </div>
+        </div>
+
+        <!-- SOMOS PAGE (Spanish only) -->
+        <div data-page="somos">
+            <a href="#/" class="back-link">← Volver al home</a>
+
+            <h1>Juan David Reyes</h1>
+            <p class="section-intro">Candidatura • Project Manager • Somos Internet</p>
+
+            <div class="section">
+                <h2>Sobre mí</h2>
+                <p>He pasado los últimos años construyendo y escalando iniciativas de impacto en Latinoamérica. Mi experiencia más significativa fue fundar y dirigir <span class="highlight"><a href="https://ethkipu.org" target="_blank">Fundación ETH Kipu</a></span>, donde lideramos programas de educación tecnológica que tocaron más de 2,500 personas en 12 países.</p>
+
+                <p><strong>Área de Educación:</strong> Fui responsable de diseñar y ejecutar nuestro programa de educación en Solidity. Trabajé con instructores de diferentes países para adaptar el currículo a contextos locales, asegurar calidad consistente, y medir impacto real en cada región.</p>
+
+                <p><strong>Community Building & Eventos:</strong> Fui Community Builder de <a href="https://devcon.org/" target="_blank">Devcon</a> en Bogotá y organicé "Road to Devcon", un espacio donde las comunidades de Ethereum de toda LatAm pudieron conectar, colaborar y tener representación en el evento más importante de developers de Ethereum en el mundo.</p>
+
+                <p>Lo que aprendí no fue solo sobre números: fue sobre gestionar stakeholders complejos, alinear múltiples gobiernos, manejar presupuestos significativos ($1.5M en grants de Ethereum Foundation), ejecutar a escala con equipos distribuidos, y construir comunidad.</p>
+            </div>
+
+            <div class="section">
+                <h2>Fundación ETH Kipu</h2>
+                <p><strong>2021 - 2024</strong> | <a href="https://ethkipu.org" target="_blank">ethkipu.org</a></p>
+
+                <div style="margin-bottom: 20px;">
+                    <div class="stat">2,500+ estudiantes</div>
+                    <div class="stat">12 países LatAm</div>
+                    <div class="stat">$1.5M grants</div>
+                    <div class="stat">Programas con gobiernos</div>
+                </div>
+
+                <div class="subsection-title">Programa de Educación en Solidity</div>
+                <p>Diseñé y ejecuté un currículo de educación técnica en Solidity adaptado a diferentes contextos. Trabajé con instructores en 12 países para garantizar consistencia, calidad y relevancia local. Capacitamos a 2,500+ personas en desarrollo blockchain.</p>
+
+                <div class="subsection-title">Ejecución a Escala</div>
+                <p>Coordiné programas simultáneos en Costa Rica, Honduras, El Salvador, Colombia, Perú, Ecuador, Chile, Argentina, Brasil, Uruguay, Bolivia y Panamá. Trabajamos directamente con gobiernos nacionales e instituciones educativas.</p>
+
+                <div class="subsection-title">Gestión Financiera</div>
+                <p>Administré $1.5M en grants de Ethereum Foundation. Reportes detallados, auditorías, transparencia total con fundadores y gobiernos.</p>
+
+                <div class="subsection-title">Community Building</div>
+                <p>Organicé "Road to Devcon", un espacio para que comunidades Ethereum de LatAm conectaran y tuvieran representación en <a href="https://devcon.org/">Devcon</a>, el evento más importante de developers de Ethereum del mundo. Fui community builder del evento en Bogotá.</p>
+            </div>
+
+            <div class="section">
+                <h2>Por qué Somos Internet</h2>
+
+                <div class="somos-box">
+                    <h3>Mi historia con la tecnología y el impacto</h3>
+                    <p>Entré al mundo de blockchain y cripto con una convicción: que los sistemas descentralizados podían transformar la vida de las personas. Trabajé en Kipu desde esa creencia.</p>
+                    <p>Pero también viví la decepción. Cripto prometió democratizar finanzas y crear sistemas que beneficiaran a todos. La realidad fue distinta en muchos casos.</p>
+                    <p>Luego escuché a <span class="highlight"><a href="https://www.youtube.com/watch?v=vJB3_F9CVCg" target="_blank">Forrest Heath</a></span> en varios podcasts hablar sobre Somos Internet. Su mensaje fue claro: crear infraestructura tecnológica de clase mundial desde Colombia, desde Latinoamérica. No promesas, sino ejecución real.</p>
+                    <p>Vi algo que me faltaba ver en cripto: Somos ha probado que se puede construir tecnología verdadera que impacte vidas desde LatAm. No es una narrativa. Es conectividad real para personas que no la tienen.</p>
+                </div>
+
+                <p>Eso me trae aquí. No busco trabajar en otro proyecto que promete el futuro. Busco trabajar en uno que ya lo está haciendo. Y creo que mi experiencia escalando educación en LatAm, gestionando equipos distribuidos, y ejecutando presupuestos complejos, puede sumar valor a tu equipo como Project Manager.</p>
+            </div>
+
+            <div className="section">
+                <h2>Capacidades como PM</h2>
+                <div className="skills">
+                    <div className="skill">
+                        <strong>Ejecución a Escala</strong>
+                        <p>De idea a 2,500 personas en 12 países. Sistemas, procesos, y rigor.</p>
+                    </div>
+                    <div className="skill">
+                        <strong>Stakeholders Complejos</strong>
+                        <p>Gobiernos, instituciones, fundaciones. Alinear visiones distintas.</p>
+                    </div>
+                    <div className="skill">
+                        <strong>Presupuestos</strong>
+                        <p>$1.5M en grants. Reportes, auditorías, transparencia.</p>
+                    </div>
+                    <div className="skill">
+                        <strong>Equipos Distribuidos</strong>
+                        <p>Coordiné trabajo en 12 países. Zonas horarias, idiomas, contextos.</p>
+                    </div>
+                    <div className="skill">
+                        <strong>Visión a Ejecución</strong>
+                        <p>Convertir estrategia en roadmaps. Roadmaps en realidad.</p>
+                    </div>
+                    <div className="skill">
+                        <strong>Aprendizaje Rápido</strong>
+                        <p>Blockchain, educación, política. Contextos nuevos, velocidad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Abierto a conversaciones. Adelante.</p>
+                <div class="links">
+                    <a href="mailto:jd.reyespaez@gmail.com">Email</a>
+                    <a href="https://www.linkedin.com/in/jdreyespaez/" target="_blank">LinkedIn</a>
+                    <a href="https://x.com/juandaveth" target="_blank">X</a>
+                </div>
+                <p style="margin-top: 20px;">juandavid.xyz/#/somos</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const lang = localStorage.getItem('lang') || 'en';
+
+        function setLang(newLang) {
+            localStorage.setItem('lang', newLang);
+            document.documentElement.lang = newLang;
+            document.querySelectorAll('[data-en], [data-es]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${newLang}`);
+            });
+            updateToggle();
+        }
+
+        function toggleLang() {
+            const current = localStorage.getItem('lang') || 'en';
+            setLang(current === 'en' ? 'es' : 'en');
+        }
+
+        function updateToggle() {
+            const current = localStorage.getItem('lang') || 'en';
+            document.querySelector('.lang-toggle').textContent = current === 'en' ? 'ES' : 'EN';
+        }
+
+        setLang(lang);
+
+        function navigate(path) {
+            const page = path === '/' ? 'home' : 'somos';
+            document.querySelectorAll('[data-page]').forEach(el => el.classList.remove('active'));
+            document.querySelector(`[data-page="${page}"]`).classList.add('active');
+            window.location.hash = path;
+        }
+
+        function handleRoute() {
+            const hash = window.location.hash.slice(1) || '/';
+            const page = hash === '/' ? 'home' : 'somos';
+            document.querySelectorAll('[data-page]').forEach(el => el.classList.remove('active'));
+            document.querySelector(`[data-page="${page}"]`).classList.add('active');
+        }
+
+        window.addEventListener('hashchange', handleRoute);
+        handleRoute();
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                navigate(href.replace('#', ''));
+            });
+        });
+    </script>
+</body>
+</html>
