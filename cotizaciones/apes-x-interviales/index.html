@@ -4,32 +4,252 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Cotización</title>
-  <link rel="stylesheet" href="/cotizaciones/cotizacion.css">
-  <style>
-    :root { --accent: #1f3b73; --accent-soft: #e8edf7; }
-    @media (prefers-color-scheme: dark) { :root { --accent: #8fb0ef; --accent-soft: #1c2436; } }
-    .draft { background: #fff4d6; color: #6b4e00; border: 1px dashed #d9a400; border-radius: 10px; padding: 10px 14px; font-size: 14px; margin-bottom: 20px; }
-    .ficha { margin-top: 18px; }
-    .ficha th { width: 110px; font-size: 13px; }
-    .count { display: flex; gap: 8px; margin: 6px 0 16px; flex-wrap: wrap; }
-    .count button { font: inherit; font-weight: 600; padding: 10px 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; }
-    .count button.on { background: var(--accent); border-color: var(--accent); color: var(--bg); }
-    .item.fijo { cursor: default; }
-    .item:not(.on) { opacity: .65; }
-    .entregable { margin: 8px 0 0 0; font-size: 15px; }
-    .item.fijo .entregable { margin-left: 0; }
-    .item.fijo ul { margin-left: 20px; }
-    .item:not(.fijo) .entregable { margin-left: 30px; }
-    ul.plain { margin: 10px 0 0 20px; }
-    ul.plain li { margin-bottom: 6px; }
-    .totales td:last-child { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-    .totales tr.grand td { font-weight: 700; font-size: 17px; }
-  </style>
+  <title>Laboratorio de IA aplicada para Grupo Interviales, cotización APES-X</title>
+  <meta name="description" content="Cotización COT-2026-001 de APES-X para Grupo Interviales: un programa de 4 a 6 talleres de IA aplicada sobre las tareas reales del equipo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="apes-x.css">
 </head>
 <body>
-  <main class="wrap" id="app"></main>
+  <a class="skip" href="#talleres">Ir a los talleres</a>
+
+  <p class="draft"><span class="container">Borrador interno para revisar con el equipo APES-X. No enviar al cliente.</span></p>
+
+  <header class="nav">
+    <div class="container nav-in">
+      <a class="logo" href="#top" aria-label="APES-X, inicio de la cotización"><span>APES</span><span class="logo-x" aria-hidden="true">X</span></a>
+      <p class="nav-ref">Cotización COT-2026-001</p>
+      <a class="btn btn--ink" data-accept href="https://wa.me/573014870542" target="_blank" rel="noopener">Aceptar por WhatsApp</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero: Counter. The offer is the visual: pick the workshops, see the price. -->
+    <section class="hero">
+      <div class="container hero-in">
+        <div class="hero-text">
+          <h1>Laboratorio de IA aplicada</h1>
+          <p class="lead">Pliegos, correos e informes reales de Interviales, trabajados con IA.</p>
+          <div class="actions">
+            <a class="btn" href="#talleres">Ver los talleres</a>
+          </div>
+        </div>
+
+        <div class="counter" role="group" aria-label="Elige el número de talleres">
+          <fieldset class="pick">
+            <legend>Talleres de 3 horas</legend>
+            <input type="radio" name="talleres" id="n4" value="4"><label for="n4">4</label>
+            <input type="radio" name="talleres" id="n5" value="5" checked><label for="n5">5</label>
+            <input type="radio" name="talleres" id="n6" value="6"><label for="n6">6</label>
+          </fieldset>
+          <div class="price-cell">
+            <p class="price-label">Fase 1, piloto</p>
+            <p class="price num" data-out="programa">$10.000.000</p>
+            <p class="price-note">más IVA si aplica. A la firma, el 50%: <strong class="num" data-out="anticipo">$5.000.000</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ficha: cells as a bento -->
+    <section class="sec sec--ficha" aria-labelledby="h-ficha">
+      <div class="container">
+        <h2 id="h-ficha">Para Interviales</h2>
+        <dl class="cells ficha">
+          <div class="cell cell--lead">
+            <dt>Cliente</dt>
+            <dd class="big">Grupo Interviales S.A.S.</dd>
+            <dd>NIT 900842466-6</dd>
+          </div>
+          <div class="cell"><dt>Atención</dt><dd>Área Administrativa</dd></div>
+          <div class="cell"><dt>Sede</dt><dd>Medellín, Calle 48B # 66-37 Of. 202</dd></div>
+          <div class="cell"><dt>Cotización</dt><dd class="num">COT-2026-001</dd></div>
+          <div class="cell"><dt>Emitida</dt><dd><time datetime="2026-11-05">5 de noviembre de 2026</time></dd></div>
+          <div class="cell cell--wide"><dt>Válida hasta</dt><dd><time datetime="2026-12-05">5 de diciembre de 2026</time></dd></div>
+          <div class="cell cell--ink cell--wide"><dt>Responsable</dt><dd>Equipo APES-X</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Lo que nos dijeron: their own facts as cells -->
+    <section class="sec sec--dolor" aria-labelledby="h-dolor">
+      <div class="container">
+        <div class="head-split">
+          <h2 id="h-dolor">Lo que nos dijeron</h2>
+          <p class="lead">De las sesiones de alineación y priorización con el equipo de Interviales, octubre de 2026.</p>
+        </div>
+        <ul class="cells dolor">
+          <li class="cell cell--lead2"><p class="fact num">$5.600 millones</p><p>Una licitación perdida por un requisito mal leído. Pasa unas dos veces al año.</p></li>
+          <li class="cell"><p class="fact num">8 por semana</p><p>Propuestas que se presentan, armadas por dos personas.</p></li>
+          <li class="cell"><p class="fact num">10 documentos</p><p>Por pliego, en promedio, de 50 a 100 folios cada uno.</p></li>
+          <li class="cell"><p class="fact">Una semana</p><p>Lo que tarda un residente en el informe mensual.</p></li>
+          <li class="cell"><p class="fact">Copiar y pegar</p><p>Así se usa hoy la IA, y a veces inventa un numeral que no existe.</p></li>
+          <li class="cell cell--ink"><p class="fact">Un oficio</p><p>Que nadie vio a tiempo, y ya no hubo plazo para responder.</p></li>
+        </ul>
+        <blockquote class="quote">
+          <p class="statement">Sin licitar, no se factura.</p>
+          <footer class="lead statement-line">El equipo de Interviales, al priorizar. Por eso el laboratorio empieza por los pliegos y el correo: cada taller deja algo funcionando en las dos urgencias de la empresa.</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Sesión inicial: split, the $0 as the object -->
+    <section class="sec sec--zero" aria-labelledby="h-zero">
+      <div class="container zero">
+        <div class="zero-fig" aria-hidden="true">$0</div>
+        <div class="zero-text">
+          <h2 id="h-zero">Primero, un diagnóstico</h2>
+          <p class="lead">Sesión inicial de 3 horas. No tiene costo ni compromete la contratación del programa.</p>
+          <ul class="ruled">
+            <li>Mapa de dolores con el equipo: dinámica de notas adhesivas y grupos por área.</li>
+            <li>Índice de madurez digital, basado en la hoja de ruta de IA de Camacol: la línea base para medir el avance.</li>
+            <li>Primeras plantillas de prompts sobre un documento real, y qué talleres priorizar.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Talleres: an index as a boxed table -->
+    <section class="sec sec--talleres" id="talleres" aria-labelledby="h-talleres">
+      <div class="container">
+        <div class="head-split">
+          <h2 id="h-talleres">Los talleres</h2>
+          <p class="lead">Ordenados por lo que Interviales priorizó. Cuatro van siempre; los dos opcionales se suman con la casilla o con el selector de arriba.</p>
+        </div>
+        <ol class="index">
+          <li class="row is-on">
+            <span class="row-n num">1</span>
+            <div class="row-body">
+              <h3>De copiar y pegar a trabajar con sus documentos</h3>
+              <p class="que">Gemini dentro de Gmail, Drive y Docs, gemas con documentos propios y cómo verificar lo que entrega la IA contra la fuente.</p>
+              <p class="ents-h">Entregables</p>
+              <ul class="ents"><li>Una biblioteca de prompts por rol: licitaciones, dirección, residentes y administración.</li><li>Una gema de Gemini por rol, creada en el Workspace que Interviales ya paga.</li><li>Un protocolo contra respuestas inventadas: toda respuesta cita numeral y folio.</li></ul>
+            </div>
+            <span class="row-state">Base</span>
+          </li>
+          <li class="row is-on">
+            <span class="row-n num">2</span>
+            <div class="row-body">
+              <h3>Pliegos sin requisitos perdidos</h3>
+              <p class="que">Leer con IA un pliego real en curso y sus adendas, sin perder requisitos habilitantes ni plazos.</p>
+              <p class="ents-h">Entregables</p>
+              <ul class="ents"><li>Una gema que extrae los requisitos habilitantes de un pliego, con el numeral y el folio de cada uno.</li><li>Una lista de verificación por propuesta: requisito, documento soporte, responsable y fecha.</li><li>Un protocolo de doble revisión para los errores que ya costaron: formatos de números, fechas de certificados y adendas.</li></ul>
+            </div>
+            <span class="row-state">Base</span>
+          </li>
+          <li class="row is-on">
+            <span class="row-n num">3</span>
+            <div class="row-body">
+              <h3>Correo y correspondencia con plazos</h3>
+              <p class="que">Cada participante configura su propia cuenta durante el taller. No incluye la administración de cuentas ni la migración de correos.</p>
+              <p class="ents-h">Entregables</p>
+              <ul class="ents"><li>Un esquema de etiquetas y filtros para las cuentas de cada proyecto.</li><li>Plantillas de respuesta que siempre incluyen el número de radicado.</li><li>Una matriz de correspondencia con plazos y responsables, y una rutina diaria de revisión asistida por IA.</li></ul>
+            </div>
+            <span class="row-state">Base</span>
+          </li>
+          <li class="row is-on" data-row="t4">
+            <span class="row-n num">4</span>
+            <div class="row-body">
+              <h3>Informes mensuales en menos tiempo</h3>
+              <p class="que">Partir de los datos del mes y del manual del contrato para llegar a un borrador revisable.</p>
+              <p class="ents-h">Entregables</p>
+              <ul class="ents"><li>Una gema por contrato con el manual de la entidad y el formato de su informe (un contrato piloto).</li><li>Una plantilla para consolidar los aportes de cada residente sin datos inconsistentes.</li><li>Una lista de revisión antes de enviar el informe.</li></ul>
+            </div>
+            <label class="row-state row-state--opt"><input type="checkbox" data-id="t4" checked> Incluir</label>
+          </li>
+          <li class="row" data-row="t5">
+            <span class="row-n num">5</span>
+            <div class="row-body">
+              <h3>De la obra a la bitácora y el acta</h3>
+              <p class="que">Captura de información en obra con las herramientas que ya tienen, antes de pensar en un bot.</p>
+              <p class="ents-h">Entregables</p>
+              <ul class="ents"><li>Una plantilla de bitácora diaria que se llena desde notas de voz y fotos, con el registro del clima para las reclamaciones por lluvia.</li><li>Un flujo para pasar la grabación de un comité a un acta con compromisos y responsables.</li><li>Una guía de custodia: cómo llega la información de obra a la oficina sin perderse en WhatsApp.</li></ul>
+            </div>
+            <label class="row-state row-state--opt"><input type="checkbox" data-id="t5"> Incluir</label>
+          </li>
+          <li class="row is-on">
+            <span class="row-n num">6</span>
+            <div class="row-body">
+              <h3>Uso responsable y hoja de ruta</h3>
+              <p class="que">Cerrar el programa decidiendo qué se escala y con qué métricas.</p>
+              <p class="ents-h">Entregables</p>
+              <ul class="ents"><li>Una política de uso de IA: qué información se puede cargar y cuál no, incluidas las hojas de vida y sus datos personales.</li><li>Una hoja de ruta de 90 días que conecta lo aprendido con las siguientes fases: pre-evaluación de licitaciones y agente de correo.</li><li>La medición final contra la línea base del índice de madurez.</li></ul>
+            </div>
+            <span class="row-state">Base</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Incluido: a set of four across -->
+    <section class="sec sec--incl" aria-labelledby="h-incl">
+      <div class="container">
+        <h2 id="h-incl">En todo el programa</h2>
+        <ul class="cells incl">
+          <li class="cell"><h3>Diagnóstico</h3><p>El índice de madurez al inicio y al cierre, y dónde la IA aporta más en la operación.</p></li>
+          <li class="cell"><h3>Materiales</h3><p>Las guías de cada taller, en un solo lugar para consultar después.</p></li>
+          <li class="cell"><h3>Medición</h3><p>Las métricas que el equipo eligió: herramientas de IA en uso regular y tareas reales que incorporan IA después de cada taller.</p></li>
+          <li class="cell"><h3>Informe final</h3><p>Resultados y recomendaciones para la dirección.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- El valor: ink band with the table and the action -->
+    <section class="band" aria-labelledby="h-valor">
+      <div class="container valor">
+        <div>
+          <h2 id="h-valor">El valor</h2>
+          <p class="lead">Pesos colombianos. El IVA se confirma con Interviales.</p>
+        </div>
+        <div>
+          <table class="totales">
+            <caption class="visually-hidden">Resumen económico</caption>
+            <tbody>
+              <tr><th scope="row">Sesión inicial de diagnóstico</th><td class="num">$0</td></tr>
+              <tr><th scope="row">Programa de <span data-out="n">5</span> talleres de 3 horas</th><td class="num" data-out="programa">$10.000.000</td></tr>
+              <tr><th scope="row">IVA del 19%, si aplica</th><td class="num" data-out="iva">$1.900.000</td></tr>
+              <tr class="grand"><th scope="row">Total con IVA, si aplica</th><td class="num" data-out="total">$11.900.000</td></tr>
+            </tbody>
+          </table>
+          <a class="btn btn--paper" data-accept href="https://wa.me/573014870542" target="_blank" rel="noopener">Aceptar por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Condiciones: rows -->
+    <section class="sec sec--cond" aria-labelledby="h-cond">
+      <div class="container cond">
+        <h2 id="h-cond">Condiciones</h2>
+        <dl class="rows">
+          <div><dt>Pago</dt><dd>50% a la firma de la cotización y 50% al cierre del programa.</dd></div>
+          <div><dt>Garantía</dt><dd>Si un taller no termina con su entregable, se repite sin costo.</dd></div>
+          <div><dt>Tiempo</dt><dd>1 a 2 semanas de preparación y un programa de 5 a 8 semanas, según el número de talleres.</dd></div>
+          <div><dt>Sesión inicial</dt><dd>Las 3 horas no tienen costo ni comprometen la contratación del programa.</dd></div>
+          <div><dt>Valores</dt><dd>En pesos colombianos (COP); no incluyen IVA. De aplicar, se adiciona a la tarifa general del 19%.</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="container">
+      <p class="logo logo--mast" aria-label="APES-X"><span>APES</span><span class="logo-x" aria-hidden="true">X</span></p>
+      <div class="foot-cols">
+        <p>APES-X S.A.S.<br>NIT 901804381-0<br>Calle 75A # 75-110, Medellín, Colombia</p>
+        <p><a href="mailto:gerencia@apes-x.co">gerencia@apes-x.co</a><br><a href="tel:+573014870542">+57 301-4870542</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="bar" role="region" aria-label="Total seleccionado">
+    <div class="container bar-in">
+      <p class="bar-tot"><strong class="num" data-out="programa">$10.000.000</strong> más IVA, <span data-out="n">5</span> talleres</p>
+      <a class="btn btn--ink" data-accept href="https://wa.me/573014870542" target="_blank" rel="noopener">Aceptar<span class="wide-only">&nbsp;por WhatsApp</span></a>
+    </div>
+  </div>
+
   <script src="datos.js"></script>
-  <script src="/cotizaciones/programa.js"></script>
+  <script src="apes-x.js"></script>
 </body>
 </html>
