@@ -22,10 +22,9 @@
     document.querySelectorAll("[data-out]").forEach((el) => { el.textContent = out[el.dataset.out]; });
     radios.forEach((r) => { r.checked = +r.value === n; });
     checks.forEach((c) => c.closest(".row").classList.toggle("is-on", c.checked));
-    const body =
-      `Hola, equipo APES-X.\n\nQueremos avanzar con el ${P.proyecto} (cotización ${P.numero}). Por ahora estamos considerando ${n} talleres.\n\nFechas posibles para la sesión inicial de 3 horas:\n- \n- \n\nPreguntas que tenemos:\n- \n`;
-    const subject = `${P.proyecto}: fechas para la sesión inicial`;
-    document.querySelectorAll("[data-fechas]").forEach((a) => { a.href = `mailto:${P.empresa.correo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; });
+    const fechas =
+      `Hola, equipo APES-X. Queremos avanzar con el ${P.proyecto} (cotización ${P.numero}). Por ahora estamos considerando ${n} talleres.\n\nFechas posibles para la sesión inicial de 3 horas:\n- \n- `;
+    document.querySelectorAll("[data-fechas]").forEach((a) => { a.href = `https://wa.me/${P.whatsapp}?text=${encodeURIComponent(fechas)}`; });
   }
 
   radios.forEach((r) => r.addEventListener("change", () => {
