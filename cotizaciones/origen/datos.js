@@ -18,7 +18,7 @@ window.COTIZACION = {
   fases: [
     {
       id: "f1",
-      semana: "9 al 13 nov",
+      semana: "9 al 20 nov",
       nombre: "Fase 1 · Catálogo y difusión",
       objetivo: "Va por pasos: primero tus lotes en línea, luego tu panel para agregar más, y después la difusión. Cada paso funciona solo y se paga por separado.",
       recomendada: true,
@@ -72,7 +72,7 @@ window.COTIZACION = {
     },
     {
       id: "f2",
-      semana: "16 al 20 nov",
+      semana: "23 nov al 4 dic",
       nombre: "Fase 2 · Seguimiento de compradores (CRM)",
       objetivo: "Que ningún interesado se pierda: saber quién preguntó por qué lote y en qué va cada uno.",
       funcionalidades: [
@@ -108,7 +108,7 @@ window.COTIZACION = {
     },
     {
       id: "f3",
-      semana: "23 al 27 nov",
+      semana: "7 al 18 dic",
       nombre: "Fase 3 · Asistente de IA en WhatsApp",
       objetivo: "Responder a cualquier hora para que los interesados no se enfríen, y que tú hables solo con los compradores reales.",
       funcionalidades: [
@@ -179,15 +179,15 @@ window.COTIZACION = {
   ],
 
   calendario: [
-    { fase: "Fase 1 · Catálogo y difusión", semana: "9 al 13 nov", nota: "Para empezar el lunes 9 necesito la información que ya tengas de los lotes (Excel, PDF, fotos). Las fotos nuevas las subes tú desde el panel." },
-    { fase: "Fase 2 · Seguimiento de compradores", semana: "16 al 20 nov" },
-    { fase: "Fase 3 · Asistente de IA en WhatsApp", semana: "23 al 27 nov" },
+    { fase: "Fase 1 · Catálogo y difusión", semana: "9 al 20 nov", nota: "Para empezar el lunes 9 necesito la información que ya tengas de los lotes (Excel, PDF, fotos). Las fotos nuevas las subes tú desde el panel." },
+    { fase: "Fase 2 · Seguimiento de compradores", semana: "23 nov al 4 dic" },
+    { fase: "Fase 3 · Asistente de IA en WhatsApp", semana: "7 al 18 dic" },
   ],
 
   condiciones: [
     "Cada funcionalidad se paga 50% al aprobarla y 50% al entregarla.",
     "Puedes aprobar fases o funcionalidades por separado; la Fase 1 es la base de las demás.",
-    "Cada fase se ejecuta en una semana, con el compromiso de dos reuniones: una de entrega y otra de ajustes. Las dos están incluidas en el precio de cada fase.",
+    "Cada fase se ejecuta en dos semanas, con el compromiso de dos reuniones: una de entrega y otra de ajustes. Las dos están incluidas en el precio de cada fase.",
     "Las Fases 2 y 3 son estimados; se confirman al terminar la Fase 1.",
     "Incluye 30 días de ajustes menores después de cada entrega.",
     "Los costos recurrentes los pagas directamente a cada proveedor, a tu nombre. Las cuentas quedan siempre a nombre de Origen.",

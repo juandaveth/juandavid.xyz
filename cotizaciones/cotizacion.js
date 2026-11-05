@@ -23,7 +23,7 @@
     ${C.calendario ? `
     <section class="cal">
       <h2>Calendario sugerido</h2>
-      <p class="objetivo">Una fase por semana, cada una con dos reuniones: entrega y ajustes.</p>
+      <p class="objetivo">Dos semanas por fase, cada una con dos reuniones: entrega y ajustes.</p>
       <table>
         ${C.calendario.map((c) => `
           <tr>
@@ -38,7 +38,7 @@
           <h2>${esc(fa.nombre)}${fa.recomendada ? '<span class="badge">Recomendada</span>' : ""}</h2>
           <span class="sub">${cop(fa.funcionalidades.reduce((s, f) => s + precio(f), 0))}</span>
         </div>
-        ${fa.semana ? `<div class="fecha">📅 Semana del ${esc(fa.semana)}</div>` : ""}
+        ${fa.semana ? `<div class="fecha">📅 Del ${esc(fa.semana)}</div>` : ""}
         <p class="objetivo">${esc(fa.objetivo)}</p>
         ${fa.funcionalidades.map((f, n) => `
           <div class="item" data-id="${f.id}">
