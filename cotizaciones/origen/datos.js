@@ -145,36 +145,44 @@ window.COTIZACION = {
     },
   ],
 
+  // TRM oficial del día en que se hizo la cotización (Superfinanciera / Banco de la República).
+  trm: { valor: 3235.59, fecha: "2026-11-04" },
+
   recurrentes: [
     {
       concepto: "Dominio .co",
-      costo: "USD 30 a 40 al año",
+      usd: [30, 40],
+      periodo: "año",
       fase: "Fase 1",
       nota: "Se paga una vez al año al registrador.",
     },
     {
       concepto: "Hosting y base de datos",
-      costo: "USD 0 al mes",
+      usd: [0, 0],
+      periodo: "mes",
       fase: "Fase 1",
       nota: "El plan gratuito alcanza para el volumen inicial. Si el catálogo crece mucho, el siguiente plan cuesta unos USD 25 al mes.",
     },
     {
       concepto: "ManyChat (Instagram)",
-      costo: "USD 15 a 39 al mes",
+      usd: [15, 39],
+      periodo: "mes",
       fase: "Fase 1",
       nota: "Depende del plan vigente al contratar y del número de contactos. ManyChat cambió sus precios en 2026.",
     },
     {
       concepto: "WhatsApp Business (Meta)",
-      costo: "Variable, desde USD 0",
+      usd: [0.005, 0.016],
+      periodo: "mensaje",
       fase: "Fase 3",
-      nota: "Responder dentro de las 24 horas a quien escribe primero es gratis. Los mensajes que inicia Origen cuestan entre USD 0,005 y 0,016 cada uno.",
+      nota: "Responder dentro de las 24 horas a quien escribe primero es gratis. Solo se cobran los mensajes que inicia Origen.",
     },
     {
       concepto: "Inteligencia artificial del asistente",
-      costo: "USD 5 a 20 al mes (estimado)",
+      usd: [5, 20],
+      periodo: "mes",
       fase: "Fase 3",
-      nota: "Depende del número de conversaciones.",
+      nota: "Estimado; depende del número de conversaciones.",
     },
   ],
 

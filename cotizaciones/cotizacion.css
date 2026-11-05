@@ -114,3 +114,5 @@ td.semana { font-weight: 700; color: var(--accent); min-width: 120px; font-size:
 }
 .fuente { margin-top: 10px; font-size: 11px; color: var(--muted); }
 .fuente a { color: inherit; }
+td .cop { display: block; font-weight: 400; color: var(--muted); font-size: 13px; margin-top: 2px; }
+.trm { font-size: 13px; color: var(--muted); margin-top: 10px; }

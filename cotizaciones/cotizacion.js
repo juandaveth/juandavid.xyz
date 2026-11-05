@@ -6,6 +6,11 @@
     new Date(iso + "T12:00:00").toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" });
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const precio = (f) => f.horas * C.tarifa;
+  const usdFmt = (n) => n.toLocaleString("es-CO", { maximumFractionDigits: 3 });
+  const rango = (a, b, f) => (a === b ? f(a) : `${f(a)} a ${f(b)}`);
+  const costoUSD = (r) => `USD ${rango(r.usd[0], r.usd[1], usdFmt)} / ${r.periodo}`;
+  const copRed = (n) => cop(n >= 1000 ? Math.round(n / 100) * 100 : n);
+  const costoCOP = (r) => (C.trm ? `≈ ${rango(r.usd[0] * C.trm.valor, r.usd[1] * C.trm.valor, copRed)}` : "");
 
   const items = C.fases.flatMap((fa) => fa.funcionalidades.map((f) => ({ ...f, fase: fa })));
   const sel = new Set(items.filter((i) => i.fase.recomendada).map((i) => i.id));
@@ -58,10 +63,11 @@
         ${C.recurrentes.map((r) => `
           <tr>
             <td>${esc(r.concepto)}<span class="nota">${esc(r.nota)}</span></td>
-            <td class="costo">${esc(r.costo)}</td>
+            <td class="costo">${costoUSD(r)}<span class="cop">${costoCOP(r)}</span></td>
             <td>${esc(r.fase)}</td>
           </tr>`).join("")}
       </table>
+      ${C.trm ? `<p class="trm">Pesos calculados con la TRM del ${fecha(C.trm.fecha)}: $${C.trm.valor.toLocaleString("es-CO", { minimumFractionDigits: 2 })} (Banco de la República). El valor final depende de la TRM del día del pago y de la comisión de tu banco.</p>` : ""}
     </section>
     <section>
       <h2>Condiciones</h2>
