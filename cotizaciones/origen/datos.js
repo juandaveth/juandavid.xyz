@@ -122,7 +122,7 @@ window.COTIZACION = {
             "Responde preguntas sobre precios, áreas, condiciones, servicios y documentos de cada lote.",
             "Hace preguntas para distinguir compradores reales de quienes solo consultan precios.",
             "Te pasa la conversación cuando el interesado está listo o pregunta algo que no sabe.",
-            "Dos semanas de ajuste con conversaciones reales.",
+            "Ajuste con conversaciones reales durante los 30 días siguientes a la entrega.",
           ],
         },
         {
@@ -171,10 +171,16 @@ window.COTIZACION = {
     },
   ],
 
+  calendario: [
+    { fase: "Fase 1 · Catálogo y difusión", semana: "Semana del 9 al 13 de noviembre", nota: "Para empezar el lunes 9 necesito la información que ya tengas de los lotes (Excel, PDF, fotos). Las fotos nuevas las subes tú desde el panel." },
+    { fase: "Fase 2 · Seguimiento de compradores", semana: "Semana del 16 al 20 de noviembre" },
+    { fase: "Fase 3 · Asistente de IA en WhatsApp", semana: "Semana del 23 al 27 de noviembre" },
+  ],
+
   condiciones: [
     "Cada funcionalidad se paga 50% al aprobarla y 50% al entregarla.",
     "Puedes aprobar fases o funcionalidades por separado; la Fase 1 es la base de las demás.",
-    "La Fase 1 se entrega en unas dos semanas a partir de que llegue la información de los lotes (fotos y datos).",
+    "Cada fase se ejecuta en una semana, con el compromiso de dos reuniones: una de entrega y otra de ajustes. Las dos están incluidas en el precio de cada fase.",
     "Las Fases 2 y 3 son estimados; se confirman al terminar la Fase 1.",
     "Incluye 30 días de ajustes menores después de cada entrega.",
     "Los costos recurrentes los pagas directamente a cada proveedor, a tu nombre. Las cuentas quedan siempre a nombre de Origen.",

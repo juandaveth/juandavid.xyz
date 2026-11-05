@@ -37,6 +37,18 @@
             <ul>${f.incluye.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
           </div>`).join("")}
       </section>`).join("")}
+    ${C.calendario ? `
+    <section>
+      <h2>Calendario sugerido</h2>
+      <p class="objetivo">Una fase por semana, cada una con dos reuniones: entrega y ajustes.</p>
+      <table>
+        ${C.calendario.map((c) => `
+          <tr>
+            <td>${esc(c.fase)}${c.nota ? `<span class="nota">${esc(c.nota)}</span>` : ""}</td>
+            <td class="costo">${esc(c.semana)}</td>
+          </tr>`).join("")}
+      </table>
+    </section>` : ""}
     <section>
       <h2>Costos recurrentes</h2>
       <p class="objetivo">Los pagas directamente a cada proveedor. No están incluidos en los valores de arriba.</p>
