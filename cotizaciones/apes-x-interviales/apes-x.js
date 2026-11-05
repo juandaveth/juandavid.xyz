@@ -22,11 +22,10 @@
     document.querySelectorAll("[data-out]").forEach((el) => { el.textContent = out[el.dataset.out]; });
     radios.forEach((r) => { r.checked = +r.value === n; });
     checks.forEach((c) => c.closest(".row").classList.toggle("is-on", c.checked));
-    const msg =
-      `Hola, desde ${P.cliente.nombre} aceptamos la cotización ${P.numero} (${P.proyecto}) con ${n} talleres:\n` +
-      list.map((t, i) => `${i + 1}. ${t.nombre}`).join("\n") +
-      `\nValor: ${cop(programa)} + IVA si aplica.`;
-    document.querySelectorAll("[data-accept]").forEach((a) => { a.href = `https://wa.me/${P.whatsapp}?text=${encodeURIComponent(msg)}`; });
+    const body =
+      `Hola, equipo APES-X.\n\nQueremos avanzar con el ${P.proyecto} (cotización ${P.numero}). Por ahora estamos considerando ${n} talleres.\n\nFechas posibles para la sesión inicial de 3 horas:\n- \n- \n\nPreguntas que tenemos:\n- \n`;
+    const subject = `${P.proyecto}: fechas para la sesión inicial`;
+    document.querySelectorAll("[data-fechas]").forEach((a) => { a.href = `mailto:${P.empresa.correo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; });
   }
 
   radios.forEach((r) => r.addEventListener("change", () => {
