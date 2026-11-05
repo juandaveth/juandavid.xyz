@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Cotización</title>
+  <link rel="stylesheet" href="/cotizaciones/cotizacion.css">
+  <style>
+    :root { --accent: #1f3b73; --accent-soft: #e8edf7; }
+    @media (prefers-color-scheme: dark) { :root { --accent: #8fb0ef; --accent-soft: #1c2436; } }
+    .draft { background: #fff4d6; color: #6b4e00; border: 1px dashed #d9a400; border-radius: 10px; padding: 10px 14px; font-size: 14px; margin-bottom: 20px; }
+    .ficha { margin-top: 18px; }
+    .ficha th { width: 110px; font-size: 13px; }
+    .count { display: flex; gap: 8px; margin: 6px 0 16px; flex-wrap: wrap; }
+    .count button { font: inherit; font-weight: 600; padding: 10px 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; }
+    .count button.on { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+    .item.fijo { cursor: default; }
+    .item:not(.on) { opacity: .65; }
+    .entregable { margin: 8px 0 0 0; font-size: 15px; }
+    .item.fijo .entregable { margin-left: 0; }
+    .item.fijo ul { margin-left: 20px; }
+    .item:not(.fijo) .entregable { margin-left: 30px; }
+    ul.plain { margin: 10px 0 0 20px; }
+    ul.plain li { margin-bottom: 6px; }
+    .totales td:last-child { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .totales tr.grand td { font-weight: 700; font-size: 17px; }
+  </style>
+</head>
+<body>
+  <main class="wrap" id="app"></main>
+  <script src="datos.js"></script>
+  <script src="/cotizaciones/programa.js"></script>
+</body>
+</html>
