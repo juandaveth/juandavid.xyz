@@ -2,7 +2,7 @@
 // Precio de cada funcionalidad = horas × tarifa. Para una cotización nueva,
 // copia esta carpeta y cambia solo este archivo.
 window.COTIZACION = {
-  cliente: "Astrid Dayanna Suárez",
+  cliente: "Astrid Suárez",
   proyecto: "Origen Inmobiliaria",
   resumen:
     "Una plataforma para vender los lotes de Origen en Tuta y Boyacá sin atender a mano a cada interesado: catálogo en línea, panel para administrarlo, enlace automático desde Instagram y, más adelante, seguimiento de compradores y un asistente que responde 24/7.",
@@ -10,10 +10,15 @@ window.COTIZACION = {
   validaHasta: "2026-11-19",
   tarifa: 50000, // COP por hora, uso interno para calcular
   whatsapp: "573163566034",
+  fuente: {
+    texto: "Notas de la reunión del 4 de noviembre de 2026",
+    url: "https://docs.google.com/document/d/1rG5jQAhJ7IYPODVF3PN71j2_DLqfYH95InA5AKAdFfM/edit?tab=t.rxvj47pdgw33",
+  },
 
   fases: [
     {
       id: "f1",
+      semana: "9 al 13 nov",
       nombre: "Fase 1 · Catálogo y difusión",
       objetivo: "Va por pasos: primero tus lotes en línea, luego tu panel para agregar más, y después la difusión. Cada paso funciona solo y se paga por separado.",
       recomendada: true,
@@ -67,6 +72,7 @@ window.COTIZACION = {
     },
     {
       id: "f2",
+      semana: "16 al 20 nov",
       nombre: "Fase 2 · Seguimiento de compradores (CRM)",
       objetivo: "Que ningún interesado se pierda: saber quién preguntó por qué lote y en qué va cada uno.",
       funcionalidades: [
@@ -102,6 +108,7 @@ window.COTIZACION = {
     },
     {
       id: "f3",
+      semana: "23 al 27 nov",
       nombre: "Fase 3 · Asistente de IA en WhatsApp",
       objetivo: "Responder a cualquier hora para que los interesados no se enfríen, y que tú hables solo con los compradores reales.",
       funcionalidades: [
@@ -172,9 +179,9 @@ window.COTIZACION = {
   ],
 
   calendario: [
-    { fase: "Fase 1 · Catálogo y difusión", semana: "Semana del 9 al 13 de noviembre", nota: "Para empezar el lunes 9 necesito la información que ya tengas de los lotes (Excel, PDF, fotos). Las fotos nuevas las subes tú desde el panel." },
-    { fase: "Fase 2 · Seguimiento de compradores", semana: "Semana del 16 al 20 de noviembre" },
-    { fase: "Fase 3 · Asistente de IA en WhatsApp", semana: "Semana del 23 al 27 de noviembre" },
+    { fase: "Fase 1 · Catálogo y difusión", semana: "9 al 13 nov", nota: "Para empezar el lunes 9 necesito la información que ya tengas de los lotes (Excel, PDF, fotos). Las fotos nuevas las subes tú desde el panel." },
+    { fase: "Fase 2 · Seguimiento de compradores", semana: "16 al 20 nov" },
+    { fase: "Fase 3 · Asistente de IA en WhatsApp", semana: "23 al 27 nov" },
   ],
 
   condiciones: [
