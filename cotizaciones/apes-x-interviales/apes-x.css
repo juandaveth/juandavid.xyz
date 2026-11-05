@@ -7,6 +7,7 @@
 /* Hallmark · waive 44c · Counter posture, a fixed total bar holds the fold · the price bar covers the last 78px of every screen, so the counter ends just above it */
 /* Hallmark · waive 79 · Counter posture, a fixed total bar holds the fold · the counter and its text end above the fixed price bar, the band under them is that bar */
 /* Hallmark · dropped https://wa.me/573014870542?text=Hola%2C%20desde%20Grupo%20Interviales%20S.A.S.%20aceptamos%20la%20cotizaci%C3%B3n%20COT-2026-001%20(Laboratorio%20de%20IA%20aplicada%20%C2%B7%20Fase%201)%20con%205%20talleres%3A%0A1.%20Fundamentos%20y%20prompting%20aplicado%0A2.%20Documentos%2C%20informes%20y%20comunicaci%C3%B3n%0A3.%20Datos%20y%20hojas%20de%20c%C3%A1lculo%20con%20IA%0A4.%20Asistentes%20a%20la%20medida%0A5.%20Uso%20responsable%20y%20hoja%20de%20ruta%0AValor%3A%20%2410.000.000%20%2B%20IVA%20si%20aplica. · the workshop names were rewritten from the client sessions, so the prefilled WhatsApp message to the same number lists the new ones */
+/* Hallmark · waive 72 · the 4, 5 and 6 cells under the 70 percent page zoom · Juanda asked for the whole page at 70 percent; the digits are the cell, set to fill it */
 /* Hallmark · dropped #app · the render root of the old script page; the markup is now static */
 /* Hallmark · reworded "Antes de empezar" to "Primero, un diagnóstico", "¿Cuántos talleres?" to "Los talleres", "Incluido en todo el programa" to "En todo el programa", "Resumen económico" to "El valor" · 78 wanted heads of six words or fewer at section size */
 @import url("./tokens.css");
@@ -22,7 +23,7 @@
 body { padding-bottom: var(--bar-h); }
 
 /* Type, Brutal: 900 capitals for heads, 400 and 700 for the rest */
-h1, h2, .statement, .price, .zero-fig, .row-n, .logo, .big {
+h1, h2, .price, .zero-fig, .row-n, .logo, .big {
   font-family: var(--font-display);
   font-weight: var(--display-weight);
   text-transform: uppercase;
@@ -135,12 +136,7 @@ a.logo:hover { background: transparent; }
 .cell--lead2 { background: var(--color-accent); color: var(--color-accent-ink); }
 .cell--ink .fact { color: var(--color-paper); }
 
-/* Statement */
-.quote { margin: var(--section-gap-s) 0 0; padding-top: var(--space-2xl); border-top: var(--rule-bar) solid var(--color-rule); }
-.quote footer { color: var(--color-ink); }
-.sec--statement { background: var(--color-paper-2); padding-block: var(--section-gap); }
-.statement { margin: 0; font-size: var(--text-giant); max-width: 14ch; }
-.statement-line { margin-top: var(--space-xl); max-width: 56ch; }
+
 
 /* Zero: split */
 .zero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-3xl); align-items: center; }
@@ -236,13 +232,22 @@ details p { margin-top: var(--space-xs); color: var(--color-muted); }
   .wide-only { display: none; }
   .bar-tot { font-size: var(--text-sm); }
   .cell--lead { grid-column: auto; grid-row: auto; min-height: 200px; }
-  .row { grid-template-columns: 64px minmax(0, 1fr); }
-  .row-state { grid-column: 1 / -1; border-left: 0; border-top: var(--rule-hair) solid var(--color-rule); justify-content: flex-start; }
+  .row { grid-template-columns: 96px minmax(0, 1fr); grid-template-rows: auto 1fr; }
+  .row-n { grid-column: 1; grid-row: 1; padding-block: var(--space-md); border-right: var(--rule-bar) solid var(--color-rule); }
+  .row-body { grid-column: 2; grid-row: 1 / 3; }
+  .row-state { grid-column: 1; grid-row: 2; flex-direction: column; border-left: 0; border-right: var(--rule-bar) solid var(--color-rule); border-top: var(--rule-hair) solid var(--color-rule); padding: var(--space-sm) var(--space-xs); text-align: center; }
   .rows > div { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); }
   .foot-cols { grid-template-columns: minmax(0, 1fr); }
   .nav .btn { display: none; }
   .bar-tot strong { display: block; font-size: var(--text-lg); }
 }
+/* Scale: the whole page at 70%, on every screen, by request */
+body { zoom: 0.7; }
+.btn { min-height: 64px; }
+@media (min-width: 60rem) {
+  .hero-in { min-height: calc(100svh / 0.7 - var(--nav-h) - var(--draft-h) - var(--bar-h)); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .row-state input:active { transform: none; }
 }
