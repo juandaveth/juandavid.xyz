@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/taller", "destination": "/taller/", "permanent": true }
+  ]
+}
