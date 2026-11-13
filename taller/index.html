@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Taller: edita videos con Claude</title>
+    <meta name="description" content="Taller presencial de 3 horas en Medellín. Llega con tus videos grabados y sal con uno ya editado por Claude. Sábado 28 de noviembre. 10 cupos." />
+    <meta property="og:title" content="Taller: edita videos con Claude" />
+    <meta property="og:description" content="Presencial en Medellín · Sábado 28 de noviembre · 3 h · 10 cupos" />
+    <meta property="og:image" content="https://juandavid.xyz/taller/og.jpg" />
+    <meta property="og:url" content="https://juandavid.xyz/taller/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Hanken+Grotesk:wght@400;600&family=VT323&display=swap" rel="stylesheet" />
+    <style>
+      :root { --neon: #d8ff4a; --tinta: #161916; --fondo: #0b0d0b; --hueso: #f1f0e7; --gris: #9aa095; --rojo: #ff5a3c; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { min-height: 100vh; background: var(--fondo); color: var(--hueso); font: 18px/1.55 "Hanken Grotesk", system-ui, sans-serif;
+        background-image: radial-gradient(ellipse at 50% 0%, #1a2010 0%, transparent 60%),
+          linear-gradient(rgba(216,255,74,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(216,255,74,.05) 1px, transparent 1px);
+        background-size: auto, 40px 40px, 40px 40px; }
+      main { max-width: 640px; margin: 0 auto; padding: 40px 16px 56px; }
+      .pixel { font-family: VT323, monospace; }
+      em { font-style: normal; color: var(--neon); text-shadow: 0 0 20px rgba(216,255,74,.5); }
+      .ventana { background: rgba(11,13,11,.94); border: 2px solid var(--neon); border-radius: 12px 12px 6px 6px; box-shadow: 0 0 36px rgba(216,255,74,.22); overflow: hidden; margin-bottom: 20px; }
+      .barra { height: 40px; background: linear-gradient(#e9ff9a, #d8ff4a 45%, #a9cc22); display: flex; align-items: center; padding: 0 12px; color: var(--tinta); font-size: 26px; }
+      .barra .botones { margin-left: auto; display: flex; gap: 5px; }
+      .barra b { width: 22px; height: 22px; border-radius: 4px; background: var(--hueso); border: 2px solid var(--tinta); display: grid; place-items: center; font: 700 12px sans-serif; }
+      .barra b.x { background: var(--rojo); color: #fff; }
+      .cuerpo { padding: 22px 22px 24px; }
+      h1 { font-family: Belleza, sans-serif; font-weight: 400; font-size: clamp(42px, 11vw, 64px); line-height: 1.02; margin-bottom: 14px; }
+      h2 { font-family: Belleza, sans-serif; font-weight: 400; font-size: 28px; color: var(--neon); margin-bottom: 10px; }
+      .lead { font-size: 20px; }
+      .rec { color: var(--gris); font-size: 22px; margin-bottom: 10px; }
+      .rec i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--rojo); margin-right: 8px; }
+      ul { list-style: none; display: grid; gap: 8px; }
+      li { display: flex; gap: 10px; }
+      .datos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .dato { border: 1px solid rgba(216,255,74,.35); border-radius: 8px; padding: 10px 12px; }
+      .dato span { display: block; font-family: VT323, monospace; font-size: 20px; color: var(--gris); line-height: 1; }
+      .dato strong { font-weight: 600; font-size: 19px; }
+      .precio strong { color: var(--neon); }
+      .boton { display: block; text-align: center; margin: 28px 0 12px; padding: 18px 20px; background: var(--neon); color: var(--tinta);
+        font-family: VT323, monospace; font-size: 34px; text-decoration: none; border-radius: 10px; box-shadow: 0 0 34px rgba(216,255,74,.45); }
+      .boton:hover, .boton:focus-visible { background: #e9ff9a; outline: 3px solid var(--hueso); outline-offset: 3px; }
+      .nota { text-align: center; color: var(--gris); font-size: 15px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="ventana">
+        <div class="barra pixel">◉ Taller.exe<span class="botones"><b>_</b><b>□</b><b class="x">✕</b></span></div>
+        <div class="cuerpo">
+          <p class="rec pixel"><i></i>inscripciones abiertas · 10 cupos</p>
+          <h1>Edita videos con <em>Claude</em></h1>
+          <p class="lead">Llega con tus videos grabados y sal con uno ya editado de manera automática.</p>
+          <a class="boton" href="https://forms.gle/W922ZmCHxNpMPAPi6">» Quiero mi cupo «</a>
+        </div>
+      </section>
+
+      <section class="ventana">
+        <div class="barra pixel">◉ Te_llevas.exe<span class="botones"><b>_</b><b>□</b><b class="x">✕</b></span></div>
+        <div class="cuerpo">
+          <ul>
+            <li>🎞 <span>Tu propio video editado ese mismo día.</span></li>
+            <li>🔁 <span>Un flujo de trabajo para que Claude sea tu editor de aquí en adelante.</span></li>
+          </ul>
+          <h2 style="margin-top:20px">Vas a aprender a</h2>
+          <ul>
+            <li>✂️ <span>Cortar silencios y errores.</span></li>
+            <li>💬 <span>Poner subtítulos automáticos.</span></li>
+            <li>✨ <span>Armar gráficos con tu propia marca.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="ventana">
+        <div class="barra pixel">◉ Detalles.exe<span class="botones"><b>_</b><b>□</b><b class="x">✕</b></span></div>
+        <div class="cuerpo">
+          <div class="datos">
+            <div class="dato"><span>dónde</span><strong>Presencial, Medellín</strong></div>
+            <div class="dato"><span>cuándo</span><strong>Sáb. 28 de nov., en la mañana</strong></div>
+            <div class="dato"><span>duración</span><strong>3 horas</strong></div>
+            <div class="dato precio"><span>valor</span><strong>$120.000 · Nequi</strong></div>
+          </div>
+          <h2 style="margin-top:20px">🎒 Trae</h2>
+          <ul>
+            <li>💻 <span>Tu computador (cualquiera sirve).</span></li>
+            <li>✳️ <span>Una cuenta de Claude con plan Pro.</span></li>
+            <li>📱 <span>Los videos que quieras editar, ya grabados.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <a class="boton" href="https://forms.gle/W922ZmCHxNpMPAPi6">» Inscribirme «</a>
+      <p class="nota">Llenas el formulario y te escribo por WhatsApp para confirmar tu cupo y el pago.</p>
+    </main>
+  </body>
+</html>
